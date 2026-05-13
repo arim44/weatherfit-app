@@ -1,0 +1,7 @@
+
+// .env 
+export const ENV={
+    API_URL:process.env.NEXT_PUBLIC_API_URL || 'test.co.kr',
+    IMAGE_URL:process.env.NEXT_PUBLIC_IMAGE_URL || '',
+    API_KEY:process.env.VITE_OPEN_WEATHER_KEY || '',
+};

@@ -1,36 +1,107 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# WeatherFit 🌤
 
-## Getting Started
+날씨 기반 AI 코디 추천 및 일정 관리 웹 애플리케이션
 
-First, run the development server:
+## 📌 프로젝트 소개
+
+WeatherFit는 현재 날씨 정보를 기반으로 사용자에게 적절한 코디를 추천하고
+간단한 일정(Todo)을 함께 관리할 수 있도록 제작한 웹 애플리케이션입니다.
+
+사용자는 원하는 도시의 날씨를 검색하고,
+현재 온도와 날씨 상태에 맞는 코디 추천을 받을 수 있습니다.
+
+또한 Todo 기능을 통해 간단한 일정 관리도 가능합니다.
+
+---
+
+## ✨ 주요 기능
+
+### 🌍 도시 검색
+
+* 원하는 도시의 날씨 검색 가능
+
+### ☁️ 날씨 조회
+
+* 현재 온도 조회
+* 날씨 상태 및 아이콘 제공
+* 날씨 코멘트 출력
+
+### 👕 코디 추천
+
+* 온도 기반 코디 추천
+* 스타일별 코디 추천 제공
+* AI 기반 코디 추천 기능 추가 예정
+
+### 📋 Todo 관리
+
+* Todo 추가 / 검색 / 체크 / 삭제
+* localStorage 저장 지원
+
+---
+
+## 🛠 기술 스택
+
+### Frontend
+
+* Next.js (App Router)
+* React
+* TypeScript
+
+### State Management
+
+* useReducer
+* Context API
+
+### API
+
+* OpenWeatherMap API
+
+### Storage
+
+* localStorage
+
+---
+
+## 📂 페이지 구성
+
+### Main Page
+
+* 날씨 카드
+* 코디 추천 카드
+* Todo 카드
+* 날씨 상태 기반 배경 이미지 변경
+
+### Outfit Page
+
+* 스타일 선택
+* AI 코디 추천
+
+### Todo Page
+
+* Todo 관리 기능 제공
+
+---
+
+## 📅 개발 일정
+
+| 날짜   | 작업 내용                  |
+| ----- | ------------------------ |
+| 05.14 | 프로젝트 세팅 및 날씨 API 연결 |
+| 05.15 | 날씨 카드 및 코디 기능 구현    |
+| 05.16 | Todo 기능 및 상태관리 구현    |
+| 05.17 | 스타일링 및 오류 수정         |
+
+---
+
+## 🚀 실행 방법
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 👩‍💻 제작자
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+홍아림

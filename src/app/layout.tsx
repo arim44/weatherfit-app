@@ -1,5 +1,5 @@
 import Link from "next/link";
-import style from './globals.css'
+import styles from "./page.module.css";
 
 export default function RootLayout({
   children,
@@ -10,14 +10,14 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <div>
-          <header>
+          <header className={styles.header}>
             {/* 링크로 하면 미리가져오는 프리패칭을 함 */}
-            <Link href={'/'}>홈 🌤️ WeatherFit</Link> &nbsp;&nbsp;
-            <Link href={'/outfit'}>코디추천</Link> &nbsp;&nbsp;
-            <Link href={'/todo'}>todo</Link> &nbsp;&nbsp;
+            <Link href={'/'}>🌤️WeatherFit</Link> &nbsp;&nbsp;&nbsp;
+            <Link href={'/outfit'}>코디추천</Link> &nbsp;&nbsp;&nbsp;
+            <Link href={'/todo'}>todo</Link> &nbsp;&nbsp;&nbsp;
           </header>
           <main>{children} </main>
-          <footer>&copy; 2026 양파마켓 All right reseved</footer>
+          <footer className={styles.footer}>&copy; 2026 양파마켓 All right reseved</footer>
         </div>
       </body>
     </html>

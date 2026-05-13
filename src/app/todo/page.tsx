@@ -1,5 +1,7 @@
 export default function Page() {
     return (
-        <div></div>
+        <div>
+            <h1>투두 페이지</h1>
+        </div>
     );
 }

@@ -47,3 +47,12 @@ a {
     color-scheme: dark;
   }
 }
+
+.footer {
+  border: gray;
+  background-color: azure;
+}
+
+.header {
+font-size: 15px;
+}

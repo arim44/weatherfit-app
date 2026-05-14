@@ -141,11 +141,50 @@ a.secondary {
   }
 }
 
+.body {
+  background-size: cover;
+  background-position: center;
+}
+
+/* 배경색 */
+.clear{
+  background-image: url('/images/sky.png');
+}
+
+.rain {
+  background-image: url('/images/darknightCity.png');
+}
+
+.snow {
+  background-image: url('/images/snow.png');
+}
+
+.clous {
+  background-image: url('/images/darknightCity.png');
+}
+
 .footer {
-  border: gray;
-  background-color: rgb(89, 176, 176);
+  width: 100%;
+  padding: 10px;
+  background-color: cadetblue;
 }
 
 .header {
 font-size: 15px;
+}
+
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 20px;
+  padding-bottom: 50px;
+}
+
+.maintitle {
+  color: white;
+  text-shadow:
+  0 0 10px rgba(255,255,255,0.3),
+  2px 2px 8px rgba(0,0,0,0.8);
 }

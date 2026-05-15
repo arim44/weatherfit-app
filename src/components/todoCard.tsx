@@ -9,6 +9,15 @@ export function TodoCard() {
         router.push('/todo');
     };
 
+    // 추가
+
+    // 검색
+
+    // 체크
+
+    // 삭제
+
+    //저장
 
     return(
         <div className={style.container}>

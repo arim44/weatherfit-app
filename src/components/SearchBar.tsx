@@ -27,7 +27,7 @@ export default function SearchBar({ onChangeQuery }: SearchBarProps) {
 
     return (
         <div className={style.search_bar}>
-            <input type='text' placeholder='도시이름을 영어로 입력해주세요' 
+            <input type='text' placeholder='도시이름을 영어로 입력하세요' 
             ref={inputRef} onKeyDown={onKeyDown} />
             <button onClick={handleSearchClick}>search</button>
         </div>

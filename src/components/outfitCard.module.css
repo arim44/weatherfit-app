@@ -50,10 +50,10 @@
 /* 현재 도시/온도 */
 .weatherText{
     font-size: 24px;
-
     margin: 0;
-
     opacity: 0.9;
+    
+    text-shadow:  2px 2px 6px rgba(0,0,0,0.4);
 }
 
 /* 추천박스 */
@@ -68,18 +68,12 @@
     padding: 10px 0;
     border-radius: 5px;
 
-
     /* background: rgba(0,0,0,0.25);
-
     border-radius: 24px;
-
     padding: 40px 20px;
-
     display: flex;
-
     flex-direction: column;
     align-items: center; */
-
     gap: 10px;
 }
 

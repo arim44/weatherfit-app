@@ -25,3 +25,17 @@ export type ApiResponse<T> = {
         is_end: boolean;
     }
 }
+
+// todo
+// 액션
+export type Action = {type: 'CREATE', newItem: Todo} |
+                     {type: 'UPDATE', targetId: number} |
+                     {type: 'DELETE', targetId: number}
+
+// todo 타입 지정
+export type Todo ={
+    id: number;             //아이디
+    isDone: boolean;        //(체크)여부
+    content: string;        //내용
+    createDate: number;     //생성한 날짜
+}

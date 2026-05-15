@@ -1,5 +1,4 @@
 // hooks
-import { ApiResponse } from '@/types';
 import { useEffect, useState } from 'react'
 
 
@@ -7,6 +6,7 @@ export default function useFetch<T>(url: string){
     // 상태관리
     const [data, setData] = useState<T | null>(null);
     const [loading, setLoading] = useState(true);
+    // 에러상태
     const [error, setError] = useState<string | null>(null);
 
     // 패치를 넣음
@@ -14,11 +14,22 @@ export default function useFetch<T>(url: string){
         const fetchData = async () => {
             //예외처리
             try{
+                setLoading(true);
+                setError(null);
+
                  // 패치
                 const response = await fetch(url);
 
                 if (!response.ok) {
-                    throw new Error(`HTTP error! status:${response.status}`)
+                    if (response.status === 404) {
+                        //throw new Error('도시를 찾을 수 없습니다');
+                        setError('도시를 찾을 수 없습니다');
+                        return;
+                    }
+
+                    //throw new Error(`HTTP error! status:${response.status}`);
+                    setError(`에러발생! status:${response.status}`);
+                    return;
                 }
 
                 //const data: ApiResponse<T> = await response.json();

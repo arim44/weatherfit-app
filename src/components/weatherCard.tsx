@@ -14,10 +14,16 @@ export default function WeatherCard() {
     const [query, setQuery] = useState<string>('seoul');
     const url = `${ENV.API_URL}?q=${query}&appid=${ENV.API_KEY}&units=metric&lang=kr`
     // 패치(url 만 받아서 가져옴)
-    const { data: weather, loading } = useFetch<WeatherData>(url);
+    const { data: weather, loading, error } = useFetch<WeatherData>(url);
 
     // 쿼리 체인지
     const onChangeQuery = (q: string) => setQuery(q);
+
+    useEffect(() => {
+        if (error) {
+            alert(error);
+        }
+    }, [error]);
 
     // 웨더 컨텍스트 사용
     const weatherContext = useContext(WeatherContext);
@@ -30,11 +36,15 @@ export default function WeatherCard() {
             setWeather(weather);
         }
     }, [weather, setWeather]);
+
     // 로딩 처리
-    if (loading || !weather) {
+    if (loading) {
         return <div>Loading...</div>
     }
 
+    if (!weather) {
+        return null;
+    }
 
     // // 가져온 날씨 데이타 넣기
     // // const icon =  '01';
@@ -52,6 +62,14 @@ export default function WeatherCard() {
     const gust = weather?.wind.gust?.toFixed(1);
 
     return (
+        // <>
+        // 모달(팝업창)
+        //     {error && (
+        //         <div className={style.errorModal}>
+        //             <p>{error}</p>
+        //         </div>
+        //     )}
+
         <div className={style.container}>
             <div className={style.cityName}>{name}</div>
             <SearchBar onChangeQuery={onChangeQuery} />
@@ -70,5 +88,6 @@ export default function WeatherCard() {
                 <p>돌풍: {gust}</p>
             </div>
         </div>
+        // </>
     );
 }

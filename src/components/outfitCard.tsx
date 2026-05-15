@@ -2,6 +2,7 @@ import { useContext } from 'react';
 import style from './outfitCard.module.css'
 import WeatherContext from '@/contexts/WeatherContext';
 import { WeatherData } from '@/types';
+import { useRouter } from 'next/navigation';
 
 // 온도기반 스타일 추천함수
 function getOutfitRecommendation(weather: WeatherData | null) {
@@ -110,7 +111,6 @@ function RecommendByTemp(temp: number) {
     };
 }
 
-
 export function OutfitCard() {
     // 웨더 컨텍스트 사용
     const weatherContext = useContext(WeatherContext);
@@ -122,6 +122,14 @@ export function OutfitCard() {
     const temp = weather?.main.temp.toFixed(1);
     //추천 멘트
     const recommendation = getOutfitRecommendation(weather);
+    
+    // 페이지 이동
+    const router = useRouter();
+    // todo 페이지 이동
+    const handleMoveClick = () => {
+        router.push('/outfit');
+    };
+
 
     return (
         <div className={style.container}>
@@ -140,6 +148,7 @@ export function OutfitCard() {
                     {recommendation.tip}
                 </p>
             </div>
+            {/* <button onClick={handleMoveClick}>outFit 추천 이동</button> */}
         </div>
     )
 }

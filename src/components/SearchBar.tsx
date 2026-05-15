@@ -17,9 +17,18 @@ export default function SearchBar({ onChangeQuery }: SearchBarProps) {
         onChangeQuery(inputRef.current.value);
     };
 
+    //엔터로 추가하기
+    const onKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+        // 눌린키가 엔터키면 onsubmit() 호출
+        if (e.key === 'Enter') {
+            handleSearchClick();
+        }
+    }
+
     return (
         <div className={style.search_bar}>
-            <input type='text' placeholder='도시이름을 영어로 입력해주세요' ref={inputRef} />
+            <input type='text' placeholder='도시이름을 영어로 입력해주세요' 
+            ref={inputRef} onKeyDown={onKeyDown} />
             <button onClick={handleSearchClick}>search</button>
         </div>
     );

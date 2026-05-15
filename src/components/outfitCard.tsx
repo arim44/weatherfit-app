@@ -27,7 +27,7 @@ function RecommendByTemp(temp: number) {
         return {
             mood: '🥵 폭염',
             outfit: '민소매, 반바지 추천',
-            tip: '외출 시 수분 보충 필수'
+            tip: '햇빛이 강하니 시원한 옷차림이 좋아요'  // 외출 시 수분 보충 필수'
         };
     }
 
@@ -35,7 +35,7 @@ function RecommendByTemp(temp: number) {
         return {
             mood: '☀️ 매우 더움',
             outfit: '반팔, 얇은 셔츠 추천',
-            tip: '통풍 좋은 옷 추천'
+            tip: '통풍이 잘 되는 가벼운 옷을 추천해요'
         };
     }
 
@@ -43,7 +43,7 @@ function RecommendByTemp(temp: number) {
         return {
             mood: '😅 더움',
             outfit: '반팔 추천',
-            tip: '얇은 소재 추천'
+            tip: '얇은 소재로 편하게 입기 좋아요'
         };
     }
 
@@ -51,7 +51,7 @@ function RecommendByTemp(temp: number) {
         return {
             mood: '😊 따뜻',
             outfit: '반팔, 얇은 긴팔 추천',
-            tip: '낮에는 더울 수 있어요'
+            tip: '낮에는 살짝 더울 수도 있어요'
         };
     }
 
@@ -59,7 +59,7 @@ function RecommendByTemp(temp: number) {
         return {
             mood: '🍃 선선',
             outfit: '얇은 가디건 추천',
-            tip: '밤에는 살짝 쌀쌀할 수 있어요'
+            tip: '가볍게 걸칠 옷 하나 있으면 좋아요'
         };
     }
 
@@ -67,7 +67,7 @@ function RecommendByTemp(temp: number) {
         return {
             mood: '🧥 쌀쌀',
             outfit: '맨투맨, 후드 추천',
-            tip: '겉옷 챙기기 좋아요'
+            tip: '아침저녁으로 선선하게 느껴질 수 있어요'
         };
     }
 
@@ -75,7 +75,7 @@ function RecommendByTemp(temp: number) {
         return {
             mood: '🧶 추움 느낌',
             outfit: '자켓, 니트 추천',
-            tip: '바람 불면 꽤 추워요'
+            tip: '바람이 불면 더 쌀쌀하게 느껴져요'
         };
     }
 
@@ -83,7 +83,7 @@ function RecommendByTemp(temp: number) {
         return {
             mood: '🥶 꽤 추움',
             outfit: '코트, 가죽자켓 추천',
-            tip: '두꺼운 외투 추천'
+            tip: '따뜻한 겉옷이 잘 어울리는 날씨예요'
         };
     }
 
@@ -91,7 +91,7 @@ function RecommendByTemp(temp: number) {
         return {
             mood: '❄️ 겨울 느낌',
             outfit: '두꺼운 코트 추천',
-            tip: '목도리 챙기면 좋아요'
+            tip: '찬 바람 때문에 체감온도가 더 낮을 수 있어요'
         };
     }
 
@@ -99,14 +99,14 @@ function RecommendByTemp(temp: number) {
         return {
             mood: '🧊 매우 추움',
             outfit: '패딩 추천',
-            tip: '보온 필수'
+            tip: '따뜻하게 입고 외출하는 걸 추천해요'
         };
     }
 
     return {
         mood: '☃️ 한파',
         outfit: '롱패딩, 목도리 추천',
-        tip: '장갑까지 챙기세요'
+        tip: '장갑과 목도리까지 챙기면 훨씬 따뜻해요'
     };
 }
 

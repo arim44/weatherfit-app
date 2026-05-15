@@ -163,6 +163,10 @@ a.secondary {
   background-image: url('/images/darknightCity.png');
 }
 
+.thunderstorm {
+  background-image: url('/images/darknightCity.png');
+}
+
 .footer {
   width: 100%;
   padding: 10px;

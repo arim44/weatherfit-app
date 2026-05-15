@@ -20,7 +20,7 @@ export type WeatherData={
 
 // API 리스폰
 export type ApiResponse<T> = {
-    docments: T[];
+    documents: T[];
     meta:{
         is_end: boolean;
     }

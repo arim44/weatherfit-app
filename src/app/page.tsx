@@ -8,6 +8,7 @@ import { TodoCard } from "@/components/todoCard";
 import { useState } from 'react'
 import { WeatherData } from "@/types";
 import WeatherContext from "@/contexts/WeatherContext";
+import { TodoStateContext } from "@/contexts/TodoContext";
 
 
 // 배경 이미지 변경
@@ -47,11 +48,12 @@ export default function Home() {
       <div className={styles.mainContainer}>
         <title>WeatherFit</title>
         <h1 className={styles.maintitle}>WeatherFit</h1>
-        <WeatherContext.Provider value={{ weather, setWeather }}>
-          <WeatherCard />
-          <OutfitCard />
-          <TodoCard />
-        </WeatherContext.Provider>
+        {/* Todo 상태 Context */}
+          <WeatherContext.Provider value={{ weather, setWeather }}>
+            <WeatherCard />
+            <OutfitCard />
+            <TodoCard />
+          </WeatherContext.Provider>
       </div>
     </div>
   );

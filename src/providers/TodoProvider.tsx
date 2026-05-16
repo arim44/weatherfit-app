@@ -1,31 +1,21 @@
 'use client'
-import TodoHeader from '@/components/TodoComponents/TodoHeader';
-import TodoEditor from '@/components/TodoComponents/TodoEditor';
-import TodoList from '@/components/TodoComponents/TodoList';
-import { useCallback, useEffect, useMemo, useReducer, useRef, useState } from 'react';
-import { Todo } from '@/types';
-import { TodoReducer } from '@/reducers/todoReducer';
 
-// localStorage에서 저장된 Todo 불러오기
+import { TodoDisPatchContext, TodoStateContext } from "@/contexts/TodoContext";
+import { TodoReducer } from "@/reducers/todoReducer";
+import { Todo } from "@/types";
+import { Children, useCallback, useEffect, useMemo, useReducer, useRef } from "react";
+
+
 function initTodos(): Todo[] {
-    //브라우저 환경체크(서버면 리턴), 서버 환경에서는 localStorage 사용 불가
     if (typeof window === 'undefined') return [];
-    // 저장된 todos 읽기
+
     const stored = localStorage.getItem('todos');
-    // 저장값 있으면 파싱해서 반환
+
     return stored ? JSON.parse(stored) : [];
 }
 
-export default function TodoApp() {
-    // hydration 에러 방지용
-    // 브라우저 마운트 이후에만 렌더링
-    const [mounted, setMounted] = useState(false);
-    useEffect(() => {
-        setMounted(true);
-    }, []);
-
-    // Todo 상태 관리 (Reducer)
-    const [todos, dispatch] = useReducer(TodoReducer, [], initTodos); //TodoReducer, [] as Todo[]);
+export default function TodoProvider({children}: {children: React.ReactNode}) {
+    const [todos, dispatch] = useReducer(TodoReducer, [], initTodos);
 
     // 저장된 마지막 id 불러오기 (??널이면 1반환)
     const initId = typeof window !== 'undefined' ?
@@ -71,17 +61,13 @@ export default function TodoApp() {
         ({ onCreate, onUpdate: onUpdate, onDelete }),
         [onCreate, onUpdate, onDelete]);
 
-    // hydration 완료 전 렌더 막기(렌더 전에 체크)
-    if (!mounted) return null;
-
     return (
-        <div className='TodoApp'>
-            <TodoHeader />
-            {/* <h1 className={styles.maintitle}>투두 페이지</h1> */}
-            {/* <TodoEditor onCreate={onCreate} />
-                    <TodoList todos={todos} onUpdate={onUpdate} onDelete={onDelete} /> */}
-            <TodoEditor />
-            <TodoList />
-        </div>
+        // Todo 상태 Context
+        <TodoStateContext.Provider value={{ todos }}>
+            {/* Todo 함수 Context */}
+            <TodoDisPatchContext.Provider value={dispatches}>
+                {children}
+            </TodoDisPatchContext.Provider>
+        </TodoStateContext.Provider>
     );
 }

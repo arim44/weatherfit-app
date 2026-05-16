@@ -4,4 +4,5 @@ export const ENV={
     API_URL:process.env.NEXT_PUBLIC_API_URL || 'test.co.kr',
     IMAGE_URL:process.env.NEXT_PUBLIC_IMAGE_URL || '',
     API_KEY:process.env.NEXT_PUBLIC_OPEN_WEATHER_KEY || '',
+    GEMINI_ApI_KEY:process.env.NEXT_PUBLIC_GEMINI_API_KEY || '',
 };

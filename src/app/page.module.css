@@ -146,7 +146,7 @@ a.secondary {
   background-position: center;
 }
 
-/* 배경색 */
+/* 배경이미지 */
 .clear{
   background-image: url('/images/sky.png');
 }
@@ -160,11 +160,11 @@ a.secondary {
 }
 
 .clous {
-  background-image: url('/images/darknightCity.png');
+  background-image: url('/images/cloudysky2.png');
 }
 
 .thunderstorm {
-  background-image: url('/images/darknightCity.png');
+  background-image: url('/images/thunderstorm.png');
 }
 
 .footer {

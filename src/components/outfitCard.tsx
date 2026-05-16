@@ -134,21 +134,13 @@ export function OutfitCard() {
     return (
         <div className={style.container}>
             <h1 className={style.title}>OutFit</h1>
-            <p className={style.weatherText}>{cityName} | {temp}</p>
+            <p className={style.weatherText}>{cityName} | {temp} °C</p>
             <div className={style.recommendBox}>
-                <h2 className={style.mood}>
-                    {recommendation.mood}
-                </h2>
-
-                <p className={style.outfit}>
-                    {recommendation.outfit}
-                </p>
-
-                <p className={style.tip}>
-                    {recommendation.tip}
-                </p>
+                <h2 className={style.mood}>{recommendation.mood}</h2>
+                <p className={style.outfit}>{recommendation.outfit}</p>
+                <p className={style.tip}>{recommendation.tip}</p>
             </div>
-            {/* <button onClick={handleMoveClick}>outFit 추천 이동</button> */}
+            <button onClick={handleMoveClick}>outFit 추천 이동</button>
         </div>
     )
 }

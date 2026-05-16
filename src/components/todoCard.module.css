@@ -1,0 +1,97 @@
+.container {
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    padding: 20px;
+    border-radius: 10px;
+
+    /* 유리테두리 느낌나게 */
+    background-color: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    color: white;
+}
+
+/* 제목 */
+.title {
+    font-size: 64px;
+    font-weight: 700;
+
+    margin: 0;
+
+    text-shadow:
+        2px 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.container button {
+    padding: 5px 28px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-left: none;
+
+    border-radius: 0 16px 16px 0;
+
+    background: rgba(0, 119, 255, 0.7);
+
+    color: white;
+    font-size: 1rem;
+
+    cursor: pointer;
+
+    backdrop-filter: blur(10px);
+
+    transition: all 0.3s ease;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* 박스 */
+.recommendBox {
+    /* width: 100%; */
+    margin: 10px 0;
+    display: flex;
+    flex-direction: column;
+
+    background-color: rgba(0, 0, 0, 0.4);
+    /* justify-content: center; */
+    /* padding: 10px 0; */
+    border-radius: 5px;
+
+    gap: 4px;
+}
+
+.todoPreview {
+    margin: 16px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.todoItem {
+    margin: 0;
+    font-size: 15px;
+    color: white;
+    opacity: 0.9;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding: 5px;
+
+    transition: all 0.2s ease;
+}
+
+.todoItem:hover{
+  transform: translateX(3px);
+  opacity:1;
+}
+
+.empty {
+    margin: 0;
+    font-size:14px;
+    opacity: 0.7;
+    padding: 5px;
+}

@@ -1,3 +1,4 @@
+import React from 'react';
 import styles from './TodoHeader.module.css'
 
 function TodoHeader() {
@@ -13,4 +14,4 @@ function TodoHeader() {
     );
 }
 
-export default TodoHeader;
+export default React.memo(TodoHeader);

@@ -1,9 +1,11 @@
+import OutFitApp from '@/components/OutFitComponents/OutfitApp';
 import styles from '../page.module.css';
 
 export default function Page() {
     return (
-        <div className={styles.rain}>
-            <h1 className={styles.maintitle}>코디 추천페이지</h1>
+        <div>
+            <h1 className={styles.maintitle}>AI 코디 추천</h1>
+            <OutFitApp />
         </div>
     );
 }

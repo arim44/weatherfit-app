@@ -1,11 +1,10 @@
 'use client'
-import { useContext, useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import style from './weatherCard.module.css'
 import { WeatherData } from '@/types'
 import { ENV } from '@/env';
 import SearchBar from './SearchBar';
 import useFetch from '@/hooks/useFetch';
-import WeatherContext from '@/contexts/WeatherContext';
 import { useWeather } from '@/hooks/useWeather';
 
 // 웨더 카드 함수
@@ -27,16 +26,12 @@ export default function WeatherCard() {
     }, [error]);
 
     // 웨더 컨텍스트 사용
-    // const weatherContext = useContext(WeatherContext);
-    // if (!weatherContext) throw new Error('Context가 없습니다');
-    //const weatherContext = useWeather();
-
     const { setWeather } = useWeather();
 
-    const handleSelect = (data:WeatherData) => {
-        setWeather(data);
-        localStorage.setItem('weather', JSON.stringify(data));
-    }
+    // const handleSelect = (data:WeatherData) => {
+    //     setWeather(data);
+    //     localStorage.setItem('weather', JSON.stringify(data));
+    // }
 
     useEffect(() => {
         // 날씨 데이타가 있으면
@@ -72,7 +67,7 @@ export default function WeatherCard() {
 
     return (
         // <>
-        // 모달(팝업창)
+        // // 모달(팝업창)
         //     {error && (
         //         <div className={style.errorModal}>
         //             <p>{error}</p>
@@ -97,6 +92,6 @@ export default function WeatherCard() {
                 <p>돌풍: {gust}</p>
             </div>
         </div>
-        // </>
+        //</>
     );
 }

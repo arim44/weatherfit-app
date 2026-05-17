@@ -38,24 +38,19 @@ function ChangeBackgroundImg(weather: WeatherData | null) {
 }
 
 export default function Home() {
-  // 전역처럼 공유할 날씨 상태
-  // const [weather, setWeather] = useState<WeatherData | null>(null);
+  // 날씨 컨텍스트에서 가져오기
   const {weather} = useWeather();
   // 배경 스타일 스트링으로 받기
   const mainState = ChangeBackgroundImg(weather);
 
   return (
-    // {styles.clear}
     <div className={mainState}>
       <div className={styles.mainContainer}>
         <title>WeatherFit</title>
         <h1 className={styles.maintitle}>WeatherFit</h1>
-        {/* Todo 상태 Context */}
-          {/* <WeatherContext.Provider value={{ weather, setWeather }}> */}
             <WeatherCard />
             <OutfitCard />
             <TodoCard />
-          {/* </WeatherContext.Provider> */}
       </div>
     </div>
   );

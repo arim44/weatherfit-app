@@ -17,7 +17,9 @@ export default function RootLayout({
           👚 <Link href={'/outfit'}>코디추천</Link> &nbsp;&nbsp;&nbsp;
           📝 <Link href={'/todo'}>todo</Link> &nbsp;&nbsp;&nbsp;
         </header>
+        {/* Todo 상태 Context */}
         <TodoProvider>
+          {/* Weather 상태 Context */}
           <WeatherProvider>
             <div>
               <main>{children} </main>

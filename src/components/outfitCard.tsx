@@ -3,6 +3,7 @@ import style from './outfitCard.module.css'
 import WeatherContext from '@/contexts/WeatherContext';
 import { WeatherData } from '@/types';
 import { useRouter } from 'next/navigation';
+import { useWeather } from '@/hooks/useWeather';
 
 // 온도기반 스타일 추천함수
 function getOutfitRecommendation(weather: WeatherData | null) {
@@ -113,13 +114,16 @@ function RecommendByTemp(temp: number) {
 
 export function OutfitCard() {
     // 웨더 컨텍스트 사용
-    const weatherContext = useContext(WeatherContext);
-    if (!weatherContext) throw new Error('Context가 없습니다');
+    // const weatherContext = useContext(WeatherContext);
+    // if (!weatherContext) throw new Error('Context가 없습니다');
+
+    //const weatherContext = useWeather();
+
     // 웨더 꺼내기
-    const { weather } = weatherContext;
+    const { weather } = useWeather();
     //사용
     const cityName = weather?.name;
-    const temp = weather?.main.temp.toFixed(1);
+    const temp = weather? weather.main.temp.toFixed(1): '';
     //추천 멘트
     const recommendation = getOutfitRecommendation(weather);
     

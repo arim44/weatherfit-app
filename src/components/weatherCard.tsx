@@ -6,6 +6,7 @@ import { ENV } from '@/env';
 import SearchBar from './SearchBar';
 import useFetch from '@/hooks/useFetch';
 import WeatherContext from '@/contexts/WeatherContext';
+import { useWeather } from '@/hooks/useWeather';
 
 // 웨더 카드 함수
 export default function WeatherCard() {
@@ -26,9 +27,17 @@ export default function WeatherCard() {
     }, [error]);
 
     // 웨더 컨텍스트 사용
-    const weatherContext = useContext(WeatherContext);
-    if (!weatherContext) throw new Error('Context가 없습니다');
-    const { setWeather } = weatherContext;
+    // const weatherContext = useContext(WeatherContext);
+    // if (!weatherContext) throw new Error('Context가 없습니다');
+    //const weatherContext = useWeather();
+
+    const { setWeather } = useWeather();
+
+    const handleSelect = (data:WeatherData) => {
+        setWeather(data);
+        localStorage.setItem('weather', JSON.stringify(data));
+    }
+
     useEffect(() => {
         // 날씨 데이타가 있으면
         if (weather) {

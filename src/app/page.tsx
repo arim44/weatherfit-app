@@ -9,6 +9,7 @@ import { useState } from 'react'
 import { WeatherData } from "@/types";
 import WeatherContext from "@/contexts/WeatherContext";
 import { TodoStateContext } from "@/contexts/TodoContext";
+import { useWeather } from "@/hooks/useWeather";
 
 
 // 배경 이미지 변경
@@ -38,7 +39,8 @@ function ChangeBackgroundImg(weather: WeatherData | null) {
 
 export default function Home() {
   // 전역처럼 공유할 날씨 상태
-  const [weather, setWeather] = useState<WeatherData | null>(null);
+  // const [weather, setWeather] = useState<WeatherData | null>(null);
+  const {weather} = useWeather();
   // 배경 스타일 스트링으로 받기
   const mainState = ChangeBackgroundImg(weather);
 
@@ -49,11 +51,11 @@ export default function Home() {
         <title>WeatherFit</title>
         <h1 className={styles.maintitle}>WeatherFit</h1>
         {/* Todo 상태 Context */}
-          <WeatherContext.Provider value={{ weather, setWeather }}>
+          {/* <WeatherContext.Provider value={{ weather, setWeather }}> */}
             <WeatherCard />
             <OutfitCard />
             <TodoCard />
-          </WeatherContext.Provider>
+          {/* </WeatherContext.Provider> */}
       </div>
     </div>
   );

@@ -1,0 +1,95 @@
+.container {
+    min-height: 100vh;
+    padding: 40px 20px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    /* 🌈 Outfit 전용 고정 배경 (AI 느낌) */
+    background: linear-gradient(180deg, #eef2ff 0%, #f5f3ff 100%);
+}
+
+.title {
+    font-size: 34px;
+    font-weight: 800;
+    color: #1e1b4b;
+    margin-bottom: 8px;
+}
+
+.subTitle {
+    font-size: 14px;
+    color: #6b7280;
+    margin-bottom: 24px;
+}
+
+.card {
+    width: 420px;
+
+    background: rgba(255, 255, 255, 0.65);
+    backdrop-filter: blur(14px);
+
+    border-radius: 22px;
+    padding: 22px;
+
+    border: 1px solid rgba(99, 102, 241, 0.15);
+
+    box-shadow: 0 10px 40px rgba(99, 102, 241, 0.15);
+}
+
+.city {
+    font-size: 18px;
+    font-weight: 600;
+    color: #4338ca;
+    margin-bottom: 10px;
+}
+
+.buttonGroup {
+    display: flex;
+    gap: 10px;
+    margin: 14px 0;
+}
+
+.button {
+    flex: 1;
+    padding: 10px;
+
+    border-radius: 12px;
+    border: none;
+
+    background: #6366f1;
+    color: white;
+    font-weight: 600;
+
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.button:hover {
+    background: #4f46e5;
+}
+
+.resultCard {
+    margin-top: 18px;
+
+    background: rgba(99, 102, 241, 0.08);
+    border: 1px solid rgba(99, 102, 241, 0.15);
+
+    border-radius: 16px;
+    padding: 16px;
+}
+
+.loading {
+    color: #6b7280;
+    font-size: 14px;
+}
+
+.error {
+    color: #ef4444;
+    font-size: 14px;
+}
+
+/* AI 추천텍스트 */
+.whiteSpace {
+    white-space: pre-wrap;
+}

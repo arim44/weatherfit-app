@@ -4,7 +4,7 @@ export type WeatherData={
     name: string;               // 도시 이름
     weather:{
         main: string;           // 날씨상태
-        description: string     // 사용자문구(코멘트))
+        description: string;     // 사용자문구(코멘트))
         icon: string;           // 아이콘
     }[];
     main:{
@@ -16,6 +16,16 @@ export type WeatherData={
         speed: number;          // 풍속(평균 바람 속도, 계속 부는 바람)
         gust: number;           // 돌풍(순간 최대 풍속) ⇒ 체감추위 영향 큼
     };
+}
+
+export type Recommendation={
+    candidates:{
+        content:{
+            parts:{
+                text: string;
+            }
+        }
+    }[];
 }
 
 // API 리스폰

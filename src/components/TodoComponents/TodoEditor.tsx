@@ -1,6 +1,7 @@
 'use client'
 import { useContext, useRef, useState } from 'react';
 import style from './TodoEditor.module.css'
+import styles from './TodoApp.module.css'
 import { TodoDisPatchContext } from '@/contexts/TodoContext';
 
 // interface TodoEditorProps{
@@ -43,11 +44,13 @@ function TodoEditor() {
 
     return(
         <div className={style.TodoEditor}>
+            <div className={styles.card}>
             <h4>새로운 Todo 작성하기 ✍️</h4>
             <div className={style.editor_wrapper}>
                 <input type="text" placeholder="새로운 Todo..." onChange={onChangeContent}
                     ref={inputRef} onKeyDown={onKeyDown} value={content} />
                 <button onClick={onSubmit}>추가</button>
+            </div>
             </div>
         </div>
     );

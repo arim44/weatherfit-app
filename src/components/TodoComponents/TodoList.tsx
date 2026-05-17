@@ -1,7 +1,8 @@
-import style from './TodoList.module.css'
+
+import style from './TodoApp.module.css'
 import TodoItem from './TodoItem';
 import { ChangeEvent, useState, useMemo, useContext } from 'react';
-import { TodoDisPatchContext, TodoStateContext } from '@/contexts/TodoContext';
+import { TodoStateContext } from '@/contexts/TodoContext';
 
 // // TodoList 컴포넌트 props 타입
 // interface TodoListProps{
@@ -56,21 +57,23 @@ function TodoList() {
     }, [todos, search]); //[언제 다시 계산힐지] todos 또는 search 변경 시 다시 계산헤서 정렬
 
     return (
-        <div className={style.container}>
-            <h4>Todo List</h4>
-            {/* Todo 상태 표시 */}
-            <div className={style.todo_status}>
-                <div>총 Todo : {totalCount}, 완료된 Todo : {doneCount}, 남은 Todo: {notDoneCount}</div>
-            </div>
-            {/* 검색창 */}
-            <input type="text"
-                className="searchbar"
-                placeholder="검색어를 입력하세요." onChange={onChangeSearch} />
-            {/* Todo 목록 */}
-            <div>
-                {sortedTodos.map((todo) =>
-                    <TodoItem todo={todo} key={todo.id} />)}
+        <div>
+            <div className={style.card}>
+                <h4>Todo List</h4>
+                {/* Todo 상태 표시 */}
+                <div className={style.todo_status}>
+                    총 Todo : {totalCount}, 완료된 Todo : {doneCount}, 남은 Todo: {notDoneCount}
+                </div>
 
+                {/* 검색창 */}
+                <input type="text"
+                    className="searchbar"
+                    placeholder="검색어를 입력하세요." onChange={onChangeSearch} />
+                {/* Todo 목록 */}
+                <div>
+                    {sortedTodos.map((todo) =>
+                        <TodoItem todo={todo} key={todo.id} />)}
+                </div>
             </div>
         </div>
     );

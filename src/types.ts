@@ -18,6 +18,7 @@ export type WeatherData={
     };
 }
 
+// 날씨 기반 코디 추천멘트
 export type Recommendation={
     candidates:{
         content:{

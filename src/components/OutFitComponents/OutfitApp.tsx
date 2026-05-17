@@ -75,6 +75,8 @@ function OutFitApp() {
             setLoading(false);
         }
     }
+    // 26.05.18 추가
+    if (!mounted) return null;
 
     return (
         <div className={style.container}>
@@ -96,9 +98,10 @@ function OutFitApp() {
                     {error && <p className={style.error}>{error}</p>}
                     {recommendation && (
                         <div className={style.resultCard}>
-                            <p className={style.whiteSpace}>
-                                {recommendation.split('\n').map((line, idx) => (<p key={idx}>{line}</p>))}
-                            </p>
+                            <div className={style.whiteSpace}>
+                                {recommendation.split('\n').map((line, idx) => 
+                                    (<p key={idx}>{line}</p>))}
+                            </div>
                             {/* <p className={style.whiteSpace}>{recommendation}</p> */}
                         </div>
                     )}

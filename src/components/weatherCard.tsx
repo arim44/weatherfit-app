@@ -6,6 +6,7 @@ import { ENV } from '@/env';
 import SearchBar from './SearchBar';
 import useFetch from '@/hooks/useFetch';
 import { useWeather } from '@/hooks/useWeather';
+import Image from 'next/image';
 
 // 웨더 카드 함수
 export default function WeatherCard() {
@@ -51,8 +52,8 @@ export default function WeatherCard() {
     }
 
     // // 가져온 날씨 데이타 넣기
-    // // const icon =  '01';
-    // // const iconUrl = `/Images/${icon}.png`;
+    // // const icon =  '01';  //weather.weather[0].icon.slice(0, 2);
+    // // const iconUrl = `/Images/IconImg/${icon}.png`;
     const icon = weather?.weather[0].icon;
     const iconUrl = `https://openweathermap.org/img/wn/${icon}.png`;
     const name = weather?.name;
@@ -78,7 +79,7 @@ export default function WeatherCard() {
             <div className={style.cityName}>{name}</div>
             <SearchBar onChangeQuery={onChangeQuery} />
             <div className={style.weatherInfo}>
-                <img src={iconUrl} alt='weather Icon' height={100} width={100} />
+                <Image src={iconUrl} alt='weather Icon' height={100} width={100} />
                 &nbsp;&nbsp;&nbsp;
                 <h2 className={style.cardtext}>{temp} °C</h2>
             </div>
@@ -95,3 +96,18 @@ export default function WeatherCard() {
         //</>
     );
 }
+
+
+
+// // 날씨 아이콘 매핑
+// const weatherIcons: Record<string, string> = {
+//     '01': 'clear',
+//     '02': 'few-clouds',
+//     '03': 'clouds',
+//     '04': 'broken-clouds',
+//     '09': 'shower-rain',
+//     '10': 'rain',
+//     '11': 'thunder',
+//     '13': 'snow',
+//     '50': 'mist',
+// };

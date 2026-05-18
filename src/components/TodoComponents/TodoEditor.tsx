@@ -36,6 +36,9 @@ function TodoEditor() {
 
     //엔터로 추가하기
     const onKeyDown = (e:React.KeyboardEvent<HTMLInputElement>) => {
+        // 한글 조합 중이면 무시
+        if (e.nativeEvent.isComposing) return;
+        
         // 눌린키가 엔터키면 onsubmit() 호출
         if(e.key === 'Enter'){
              onSubmit();

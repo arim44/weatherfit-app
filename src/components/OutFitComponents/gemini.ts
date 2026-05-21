@@ -8,8 +8,8 @@ const apiKey = ENV.GEMINI_API_KEY;
 const genAI = new GoogleGenerativeAI(apiKey);
 
 export async function getOutfitRecommendation(style:string, temp:number,feels_like:number, weather:string){
-    // 가장 빠르고 가벼운 무료 모델 선택
-    const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
+    // 가장 빠르고 가벼운 무료 모델 선택(무료 API에서는 아직 2.5안될수 있음)
+    const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" }); //  gemini-2.5-flash
 
     // AI에게 시킬 프롬프트 작성
     const prompt=`

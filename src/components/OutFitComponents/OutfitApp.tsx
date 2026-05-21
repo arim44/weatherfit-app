@@ -62,9 +62,12 @@ function OutFitApp() {
                 }),
             });
 
-            if (!response.ok) throw new Error('AI 추천 실패');
+            //if (!response.ok) throw new Error('AI 추천 실패');
 
             const data = await response.json();
+            if (!response.ok) {
+                throw new Error(data.error || 'AI 추천 실패');
+            }
             // 데이터 저장용 State에 넣기 (예: setOutfit(data.recommendation))
             setRecommendation(data.recommendation);
             console.log(data.recommendation);
@@ -99,7 +102,7 @@ function OutFitApp() {
                     {recommendation && (
                         <div className={style.resultCard}>
                             <div className={style.whiteSpace}>
-                                {recommendation.split('\n').map((line, idx) => 
+                                {recommendation.split('\n').map((line, idx) =>
                                     (<p key={idx}>{line}</p>))}
                             </div>
                             {/* <p className={style.whiteSpace}>{recommendation}</p> */}
